@@ -1,0 +1,12 @@
+"home.title" = "Karacabey Gross";
+"home.search.placeholder" = "Ürün, kategori veya marka ara...";
+"home.categories" = "Kategoriler";
+"home.bestsellers" = "Çok Satanlar";
+"home.all_products" = "Tüm Ürünler";
+"cart.add" = "Sepete Ekle";
+"cart.added" = "Sepete Eklendi";
+"cart.title" = "Sepetim";
+"payment.success" = "Ödeme başarılı";
+"payment.message" = "Siparişiniz hazırlanmak üzere mağazaya iletildi.";
+"error.network" = "İnternet bağlantısı yok. Lütfen bağlantınızı kontrol edin.";
+"error.general" = "Bir hata oluştu. Lütfen tekrar deneyin.";

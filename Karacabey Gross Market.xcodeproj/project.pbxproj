@@ -1,0 +1,953 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F10000000000000000000003 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = F10000000000000000000001 /* FirebaseCore */; };
+		F10000000000000000000004 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = F10000000000000000000002 /* FirebaseMessaging */; };
+		F10000000000000000000006 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = F10000000000000000000007 /* FirebaseCrashlytics */; };
+		F20000000000000000000001 /* KGMWidgets.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F20000000000000000000011 /* KGMWidgets.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F20000000000000000000002 /* KGMNotificationService.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F20000000000000000000012 /* KGMNotificationService.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F30000000000000000000003 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = F30000000000000000000002 /* GoogleMobileAds */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9415E34A2FBA66CD00C4F1F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9415E3302FBA66CB00C4F1F7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9415E3372FBA66CB00C4F1F7;
+			remoteInfo = "Karacabey Gross Market";
+		};
+		9415E3542FBA66CD00C4F1F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9415E3302FBA66CB00C4F1F7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9415E3372FBA66CB00C4F1F7;
+			remoteInfo = "Karacabey Gross Market";
+		};
+		F20000000000000000000021 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9415E3302FBA66CB00C4F1F7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F20000000000000000000041;
+			remoteInfo = KGMWidgets;
+		};
+		F20000000000000000000022 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9415E3302FBA66CB00C4F1F7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F20000000000000000000042;
+			remoteInfo = KGMNotificationService;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F20000000000000000000031 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				F20000000000000000000001 /* KGMWidgets.appex in Embed Foundation Extensions */,
+				F20000000000000000000002 /* KGMNotificationService.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		9415E3382FBA66CC00C4F1F7 /* Karacabey Gross Market.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Karacabey Gross Market.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9415E3492FBA66CD00C4F1F7 /* Karacabey Gross MarketTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Karacabey Gross MarketTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9415E3532FBA66CD00C4F1F7 /* Karacabey Gross MarketUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Karacabey Gross MarketUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F20000000000000000000011 /* KGMWidgets.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = KGMWidgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		F20000000000000000000012 /* KGMNotificationService.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = KGMNotificationService.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		9415E35B2FBA66CD00C4F1F7 /* Exceptions for "Karacabey Gross Market" folder in "Karacabey Gross Market" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 9415E3372FBA66CB00C4F1F7 /* Karacabey Gross Market */;
+		};
+		F20000000000000000000051 /* Exceptions for "KGMWidgets" folder in "KGMWidgets" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = F20000000000000000000041 /* KGMWidgets */;
+		};
+		F20000000000000000000052 /* Exceptions for "KGMNotificationService" folder in "KGMNotificationService" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = F20000000000000000000042 /* KGMNotificationService */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		9415E33A2FBA66CC00C4F1F7 /* Karacabey Gross Market */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				9415E35B2FBA66CD00C4F1F7 /* Exceptions for "Karacabey Gross Market" folder in "Karacabey Gross Market" target */,
+			);
+			path = "Karacabey Gross Market";
+			sourceTree = "<group>";
+		};
+		9415E34C2FBA66CD00C4F1F7 /* Karacabey Gross MarketTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Karacabey Gross MarketTests";
+			sourceTree = "<group>";
+		};
+		9415E3562FBA66CD00C4F1F7 /* Karacabey Gross MarketUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Karacabey Gross MarketUITests";
+			sourceTree = "<group>";
+		};
+		F20000000000000000000061 /* KGMWidgets */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				F20000000000000000000051 /* Exceptions for "KGMWidgets" folder in "KGMWidgets" target */,
+			);
+			path = KGMWidgets;
+			sourceTree = "<group>";
+		};
+		F20000000000000000000062 /* KGMNotificationService */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				F20000000000000000000052 /* Exceptions for "KGMNotificationService" folder in "KGMNotificationService" target */,
+			);
+			path = KGMNotificationService;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9415E3352FBA66CB00C4F1F7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F10000000000000000000003 /* FirebaseCore in Frameworks */,
+				F10000000000000000000004 /* FirebaseMessaging in Frameworks */,
+				F10000000000000000000006 /* FirebaseCrashlytics in Frameworks */,
+				F30000000000000000000003 /* GoogleMobileAds in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9415E3462FBA66CD00C4F1F7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9415E3502FBA66CD00C4F1F7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F20000000000000000000071 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F20000000000000000000072 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9415E32F2FBA66CB00C4F1F7 = {
+			isa = PBXGroup;
+			children = (
+				9415E33A2FBA66CC00C4F1F7 /* Karacabey Gross Market */,
+				F20000000000000000000061 /* KGMWidgets */,
+				F20000000000000000000062 /* KGMNotificationService */,
+				9415E34C2FBA66CD00C4F1F7 /* Karacabey Gross MarketTests */,
+				9415E3562FBA66CD00C4F1F7 /* Karacabey Gross MarketUITests */,
+				9415E3392FBA66CC00C4F1F7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9415E3392FBA66CC00C4F1F7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9415E3382FBA66CC00C4F1F7 /* Karacabey Gross Market.app */,
+				F20000000000000000000011 /* KGMWidgets.appex */,
+				F20000000000000000000012 /* KGMNotificationService.appex */,
+				9415E3492FBA66CD00C4F1F7 /* Karacabey Gross MarketTests.xctest */,
+				9415E3532FBA66CD00C4F1F7 /* Karacabey Gross MarketUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9415E3372FBA66CB00C4F1F7 /* Karacabey Gross Market */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9415E35C2FBA66CD00C4F1F7 /* Build configuration list for PBXNativeTarget "Karacabey Gross Market" */;
+			buildPhases = (
+				9415E3342FBA66CB00C4F1F7 /* Sources */,
+				9415E3352FBA66CB00C4F1F7 /* Frameworks */,
+				9415E3362FBA66CB00C4F1F7 /* Resources */,
+				F20000000000000000000031 /* Embed Foundation Extensions */,
+				F10000000000000000000008 /* Upload Crashlytics Symbols */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F20000000000000000000101 /* PBXTargetDependency */,
+				F20000000000000000000102 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				9415E33A2FBA66CC00C4F1F7 /* Karacabey Gross Market */,
+			);
+			name = "Karacabey Gross Market";
+			packageProductDependencies = (
+				F10000000000000000000001 /* FirebaseCore */,
+				F10000000000000000000002 /* FirebaseMessaging */,
+				F10000000000000000000007 /* FirebaseCrashlytics */,
+				F30000000000000000000002 /* GoogleMobileAds */,
+			);
+			productName = "Karacabey Gross Market";
+			productReference = 9415E3382FBA66CC00C4F1F7 /* Karacabey Gross Market.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9415E3482FBA66CD00C4F1F7 /* Karacabey Gross MarketTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9415E3612FBA66CD00C4F1F7 /* Build configuration list for PBXNativeTarget "Karacabey Gross MarketTests" */;
+			buildPhases = (
+				9415E3452FBA66CD00C4F1F7 /* Sources */,
+				9415E3462FBA66CD00C4F1F7 /* Frameworks */,
+				9415E3472FBA66CD00C4F1F7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9415E34B2FBA66CD00C4F1F7 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				9415E34C2FBA66CD00C4F1F7 /* Karacabey Gross MarketTests */,
+			);
+			name = "Karacabey Gross MarketTests";
+			productName = "Karacabey Gross MarketTests";
+			productReference = 9415E3492FBA66CD00C4F1F7 /* Karacabey Gross MarketTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9415E3522FBA66CD00C4F1F7 /* Karacabey Gross MarketUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9415E3642FBA66CD00C4F1F7 /* Build configuration list for PBXNativeTarget "Karacabey Gross MarketUITests" */;
+			buildPhases = (
+				9415E34F2FBA66CD00C4F1F7 /* Sources */,
+				9415E3502FBA66CD00C4F1F7 /* Frameworks */,
+				9415E3512FBA66CD00C4F1F7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9415E3552FBA66CD00C4F1F7 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				9415E3562FBA66CD00C4F1F7 /* Karacabey Gross MarketUITests */,
+			);
+			name = "Karacabey Gross MarketUITests";
+			productName = "Karacabey Gross MarketUITests";
+			productReference = 9415E3532FBA66CD00C4F1F7 /* Karacabey Gross MarketUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		F20000000000000000000041 /* KGMWidgets */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F20000000000000000000121 /* Build configuration list for PBXNativeTarget "KGMWidgets" */;
+			buildPhases = (
+				F20000000000000000000091 /* Sources */,
+				F20000000000000000000071 /* Frameworks */,
+				F20000000000000000000081 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				F20000000000000000000061 /* KGMWidgets */,
+			);
+			name = KGMWidgets;
+			packageProductDependencies = (
+			);
+			productName = KGMWidgets;
+			productReference = F20000000000000000000011 /* KGMWidgets.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		F20000000000000000000042 /* KGMNotificationService */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F20000000000000000000122 /* Build configuration list for PBXNativeTarget "KGMNotificationService" */;
+			buildPhases = (
+				F20000000000000000000092 /* Sources */,
+				F20000000000000000000072 /* Frameworks */,
+				F20000000000000000000082 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				F20000000000000000000062 /* KGMNotificationService */,
+			);
+			name = KGMNotificationService;
+			packageProductDependencies = (
+			);
+			productName = KGMNotificationService;
+			productReference = F20000000000000000000012 /* KGMNotificationService.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9415E3302FBA66CB00C4F1F7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2650;
+				LastUpgradeCheck = 2650;
+				TargetAttributes = {
+					9415E3372FBA66CB00C4F1F7 = {
+						CreatedOnToolsVersion = 26.5;
+					};
+					9415E3482FBA66CD00C4F1F7 = {
+						CreatedOnToolsVersion = 26.5;
+						TestTargetID = 9415E3372FBA66CB00C4F1F7;
+					};
+					9415E3522FBA66CD00C4F1F7 = {
+						CreatedOnToolsVersion = 26.5;
+						TestTargetID = 9415E3372FBA66CB00C4F1F7;
+					};
+					F20000000000000000000041 = {
+						CreatedOnToolsVersion = 26.5;
+					};
+					F20000000000000000000042 = {
+						CreatedOnToolsVersion = 26.5;
+					};
+				};
+			};
+			buildConfigurationList = 9415E3332FBA66CB00C4F1F7 /* Build configuration list for PBXProject "Karacabey Gross Market" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				tr,
+			);
+			mainGroup = 9415E32F2FBA66CB00C4F1F7;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				F10000000000000000000005 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				F30000000000000000000001 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 9415E3392FBA66CC00C4F1F7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9415E3372FBA66CB00C4F1F7 /* Karacabey Gross Market */,
+				F20000000000000000000041 /* KGMWidgets */,
+				F20000000000000000000042 /* KGMNotificationService */,
+				9415E3482FBA66CD00C4F1F7 /* Karacabey Gross MarketTests */,
+				9415E3522FBA66CD00C4F1F7 /* Karacabey Gross MarketUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9415E3362FBA66CB00C4F1F7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9415E3472FBA66CD00C4F1F7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9415E3512FBA66CD00C4F1F7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F20000000000000000000081 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F20000000000000000000082 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F10000000000000000000008 /* Upload Crashlytics Symbols */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Upload Crashlytics Symbols";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ \"$CONFIGURATION\" != \"Release\" ]; then\n  exit 0\nfi\n\nGOOGLE_SERVICE_INFO=\"${PROJECT_DIR}/Karacabey Gross Market/GoogleService-Info.plist\"\nCRASHLYTICS_RUN=\"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n\nif [ -f \"$GOOGLE_SERVICE_INFO\" ] && [ -x \"$CRASHLYTICS_RUN\" ]; then\n  \"$CRASHLYTICS_RUN\" -gsp \"$GOOGLE_SERVICE_INFO\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9415E3342FBA66CB00C4F1F7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9415E3452FBA66CD00C4F1F7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9415E34F2FBA66CD00C4F1F7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F20000000000000000000091 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F20000000000000000000092 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9415E34B2FBA66CD00C4F1F7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9415E3372FBA66CB00C4F1F7 /* Karacabey Gross Market */;
+			targetProxy = 9415E34A2FBA66CD00C4F1F7 /* PBXContainerItemProxy */;
+		};
+		9415E3552FBA66CD00C4F1F7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9415E3372FBA66CB00C4F1F7 /* Karacabey Gross Market */;
+			targetProxy = 9415E3542FBA66CD00C4F1F7 /* PBXContainerItemProxy */;
+		};
+		F20000000000000000000101 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F20000000000000000000041 /* KGMWidgets */;
+			targetProxy = F20000000000000000000021 /* PBXContainerItemProxy */;
+		};
+		F20000000000000000000102 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F20000000000000000000042 /* KGMNotificationService */;
+			targetProxy = F20000000000000000000022 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		9415E35D2FBA66CD00C4F1F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Karacabey Gross Market/Karacabey_Gross_Market.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 35B7ZX5TY6;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Karacabey Gross Market/Info.plist";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = NO;
+				INFOPLIST_KEY_UILaunchStoryboardName = KGMLaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.erkur.karacabeygrossmarket.dev123;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9415E35E2FBA66CD00C4F1F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Karacabey Gross Market/Karacabey_Gross_Market.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 35B7ZX5TY6;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Karacabey Gross Market/Info.plist";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = NO;
+				INFOPLIST_KEY_UILaunchStoryboardName = KGMLaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.erkur.karacabeygrossmarket.dev123;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		9415E35F2FBA66CD00C4F1F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 35B7ZX5TY6;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9415E3602FBA66CD00C4F1F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 35B7ZX5TY6;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9415E3622FBA66CD00C4F1F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 35B7ZX5TY6;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Erkur.Karacabey-Gross-MarketTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Karacabey Gross Market.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Karacabey Gross Market";
+			};
+			name = Debug;
+		};
+		9415E3632FBA66CD00C4F1F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 35B7ZX5TY6;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Erkur.Karacabey-Gross-MarketTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Karacabey Gross Market.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Karacabey Gross Market";
+			};
+			name = Release;
+		};
+		9415E3652FBA66CD00C4F1F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 35B7ZX5TY6;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Erkur.Karacabey-Gross-MarketUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Karacabey Gross Market";
+			};
+			name = Debug;
+		};
+		9415E3662FBA66CD00C4F1F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 35B7ZX5TY6;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Erkur.Karacabey-Gross-MarketUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Karacabey Gross Market";
+			};
+			name = Release;
+		};
+		F20000000000000000000111 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = KGMWidgets/KGMWidgets.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 35B7ZX5TY6;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = KGMWidgets/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.erkur.karacabeygrossmarket.dev123.widgets;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F20000000000000000000112 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = KGMWidgets/KGMWidgets.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 35B7ZX5TY6;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = KGMWidgets/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.erkur.karacabeygrossmarket.dev123.widgets;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F20000000000000000000113 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 35B7ZX5TY6;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = KGMNotificationService/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.erkur.karacabeygrossmarket.dev123.notification-service";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F20000000000000000000114 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 35B7ZX5TY6;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = KGMNotificationService/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.erkur.karacabeygrossmarket.dev123.notification-service";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9415E3332FBA66CB00C4F1F7 /* Build configuration list for PBXProject "Karacabey Gross Market" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9415E35F2FBA66CD00C4F1F7 /* Debug */,
+				9415E3602FBA66CD00C4F1F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9415E35C2FBA66CD00C4F1F7 /* Build configuration list for PBXNativeTarget "Karacabey Gross Market" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9415E35D2FBA66CD00C4F1F7 /* Debug */,
+				9415E35E2FBA66CD00C4F1F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9415E3612FBA66CD00C4F1F7 /* Build configuration list for PBXNativeTarget "Karacabey Gross MarketTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9415E3622FBA66CD00C4F1F7 /* Debug */,
+				9415E3632FBA66CD00C4F1F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9415E3642FBA66CD00C4F1F7 /* Build configuration list for PBXNativeTarget "Karacabey Gross MarketUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9415E3652FBA66CD00C4F1F7 /* Debug */,
+				9415E3662FBA66CD00C4F1F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F20000000000000000000121 /* Build configuration list for PBXNativeTarget "KGMWidgets" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F20000000000000000000111 /* Debug */,
+				F20000000000000000000112 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F20000000000000000000122 /* Build configuration list for PBXNativeTarget "KGMNotificationService" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F20000000000000000000113 /* Debug */,
+				F20000000000000000000114 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F10000000000000000000005 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = exactVersion;
+				version = 12.14.0;
+			};
+		};
+		F30000000000000000000001 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F10000000000000000000001 /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F10000000000000000000005 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		F10000000000000000000002 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F10000000000000000000005 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+		F10000000000000000000007 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F10000000000000000000005 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		F30000000000000000000002 /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F30000000000000000000001 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 9415E3302FBA66CB00C4F1F7 /* Project object */;
+}

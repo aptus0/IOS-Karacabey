@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="kgm-orange" x1="196" y1="132" x2="822" y2="920" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FF8A00"/>
+      <stop offset="0.58" stop-color="#FF6B00"/>
+      <stop offset="1" stop-color="#F24D00"/>
+    </linearGradient>
+    <clipPath id="kgm-clip">
+      <rect x="56" y="56" width="912" height="912" rx="248"/>
+    </clipPath>
+  </defs>
+  <rect width="1024" height="1024" fill="#FFFFFF"/>
+  <g clip-path="url(#kgm-clip)">
+    <rect x="0" y="782" width="1024" height="242" fill="url(#kgm-orange)"/>
+  </g>
+  <rect x="56" y="56" width="912" height="912" rx="248" fill="none" stroke="url(#kgm-orange)" stroke-width="42"/>
+
+  <g fill="url(#kgm-orange)" stroke="none">
+    <path d="M242 390 L282 224 C299 153 350 126 426 126 H656 C738 126 789 153 806 224 L846 390"
+          fill="none" stroke="url(#kgm-orange)" stroke-width="52" stroke-linecap="square" stroke-linejoin="round"/>
+    <rect x="148" y="402" width="728" height="54" rx="27"/>
+
+    <g transform="translate(342 234) rotate(-7)">
+      <rect x="32" y="0" width="44" height="24" rx="4"/>
+      <path d="M42 36 C62 58 82 96 82 136 L82 202 H22 L22 136 C22 96 36 58 56 36 Z"/>
+    </g>
+    <path d="M450 316 L536 306 L575 336 L575 402 H458 Z"/>
+    <path d="M450 316 L458 402 L430 382 L422 328 Z" fill="#FF7A00"/>
+    <path d="M536 306 L575 336 L470 344 L450 316 Z" fill="#FF940D"/>
+    <rect x="604" y="304" width="142" height="98" rx="4"/>
+    <rect x="610" y="286" width="140" height="26" rx="5" transform="rotate(4 680 299)"/>
+    <rect x="548" y="340" width="112" height="62" rx="31"/>
+    <ellipse cx="604" cy="340" rx="56" ry="18" fill="#FF7A00"/>
+    <ellipse cx="604" cy="340" rx="24" ry="7" fill="#FFFFFF"/>
+    <path d="M760 402 C734 352 764 318 786 294 C814 338 814 374 790 402 Z"/>
+    <path d="M806 402 C820 326 858 300 906 286 C902 354 870 392 822 402 Z"/>
+  </g>
+
+  <text x="512" y="725" text-anchor="middle"
+        font-family="Arial Black, Avenir Next, Helvetica, sans-serif"
+        font-size="258" font-weight="900" fill="url(#kgm-orange)">KGM</text>
+
+  <rect x="262" y="827" width="502" height="34" rx="17" fill="#FFFFFF"/>
+  <rect x="306" y="876" width="414" height="30" rx="15" fill="#FFFFFF"/>
+</svg>

@@ -1,0 +1,12 @@
+"home.title" = "Karacabey Gross";
+"home.search.placeholder" = "Search product, category or brand...";
+"home.categories" = "Categories";
+"home.bestsellers" = "Bestsellers";
+"home.all_products" = "All Products";
+"cart.add" = "Add to Cart";
+"cart.added" = "Added to Cart";
+"cart.title" = "My Cart";
+"payment.success" = "Payment successful";
+"payment.message" = "Your order has been sent to the store for preparation.";
+"error.network" = "No internet connection. Please check your network.";
+"error.general" = "An error occurred. Please try again.";

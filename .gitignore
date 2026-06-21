@@ -1,0 +1,53 @@
+# macOS
+.DS_Store
+
+# Xcode
+build/
+DerivedData/
+*.xcuserstate
+*.xcuserdatad/
+xcuserdata/
+*.xcodeproj/project.xcworkspace/xcuserdata/
+*.xcworkspace/xcuserdata/
+*.moved-aside
+*.xccheckout
+*.xcscmblueprint
+
+# Swift Package Manager
+.swiftpm/
+.build/
+
+# CocoaPods
+Pods/
+
+# Carthage
+Carthage/Build/
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output/
+
+# Archives
+*.xcarchive
+*.ipa
+
+# Certificates / Provisioning / Private Keys
+*.mobileprovision
+*.provisionprofile
+*.cer
+*.p12
+*.p8
+AuthKey_*.p8
+
+# Env / Secrets
+.env
+.env.*
+Secrets.plist
+secrets.plist
+Config.local.plist
+GoogleService-Info.plist
+
+# Logs
+*.log
