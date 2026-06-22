@@ -2,14 +2,39 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>KGM_API_BASE_URL</key>
-	<string>https://api.karacabeygrossmarket.com/api/v1</string>
-	<key>KGM_GOOGLE_MAPS_API_KEY</key>
-	<string>$(KGM_GOOGLE_MAPS_API_KEY)</string>
-	<key>KGM_APP_GROUP_IDENTIFIER</key>
-	<string>group.com.karacabeygrossmarket.app</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>com.karacabeygrossmarket.app</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>kgm</string>
+			</array>
+		</dict>
+	</array>
 	<key>GADApplicationIdentifier</key>
 	<string>ca-app-pub-3321006469806168~7406436045</string>
+	<key>KGM_API_BASE_URL</key>
+	<string>https://api.karacabeygrossmarket.com/api/v1</string>
+	<key>KGM_APP_GROUP_IDENTIFIER</key>
+	<string>group.com.karacabeygrossmarket.app</string>
+	<key>KGM_GOOGLE_MAPS_API_KEY</key>
+	<string>$(KGM_GOOGLE_MAPS_API_KEY)</string>
+	<key>KGM_NOTIFICATION_SOUND</key>
+	<string>kgm_notification.caf</string>
+	<key>KGM_SUPPORT_MAIL_BASE_URL</key>
+	<string>https://webmail.karacabeygrossmarket.com</string>
+	<key>KGM_SUPPORT_MAIL_URL</key>
+	<string>https://webmail.karacabeygrossmarket.com/api/support</string>
+	<key>KGM_TLS_CERT_SHA256_PINS</key>
+	<string>$(KGM_TLS_CERT_SHA256_PINS)</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>cydia</string>
+		<string>sileo</string>
+		<string>zbra</string>
+	</array>
 	<key>SKAdNetworkItems</key>
 	<array>
 		<dict>
@@ -213,54 +238,11 @@
 			<string>3qcr597p9d.skadnetwork</string>
 		</dict>
 	</array>
-	<key>KGM_TLS_CERT_SHA256_PINS</key>
-	<string>$(KGM_TLS_CERT_SHA256_PINS)</string>
-	<key>LSApplicationQueriesSchemes</key>
-	<array>
-		<string>cydia</string>
-		<string>sileo</string>
-		<string>zbra</string>
-	</array>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Adresinize teslimat yapılabilirliğini ve yakındaki mağazaları göstermek için konumunuzu kullanırız.</string>
-	<key>NSCameraUsageDescription</key>
-	<string>Barkod ve QR kod tarayarak ürünleri hızlıca bulmak için kameranızı kullanırız.</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Fotoğraftan ürün bulmak için seçtiğiniz görseli kullanırız.</string>
-	<key>UILaunchStoryboardName</key>
-	<string>KGMLaunchScreen</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>remote-notification</string>
 	</array>
-	<key>CFBundleURLTypes</key>
-	<array>
-		<dict>
-			<key>CFBundleURLName</key>
-			<string>com.karacabeygrossmarket.app</string>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>kgm</string>
-			</array>
-		</dict>
-	</array>
-	<key>KGM_SUPPORT_MAIL_BASE_URL</key>
-	<string>https://webmail.karacabeygrossmarket.com</string>
-	<key>KGM_SUPPORT_MAIL_URL</key>
-	<string>https://webmail.karacabeygrossmarket.com/api/support</string>
-	<key>NSSupportsLiveActivities</key>
-	<true/>
-	<key>NSSiriUsageDescription</key>
-	<string>Sesli komutlarla ürün arama, sepet ve sipariş kısayollarını kullanabilmeniz için Siri entegrasyonu kullanılır.</string>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Teslimat bölgesi, yakındaki mağaza ve sipariş teslimat deneyimini iyileştirmek için konum izni kullanılır.</string>
-	<key>NSContactsUsageDescription</key>
-	<string>Teslimat adresi ve alıcı bilgilerini kullanıcı onayıyla hızlı doldurmak için rehber erişimi kullanılabilir.</string>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>Sesli ürün arama ve Siri kısayolları için mikrofon erişimi kullanıcı onayıyla kullanılabilir.</string>
-	<key>NSFaceIDUsageDescription</key>
-	<string>Hesabınızı ve ödeme bilgilerinizi hızlı ve güvenli açmak için Face ID/Touch ID kullanılabilir.</string>
-	<key>KGM_NOTIFICATION_SOUND</key>
-	<string>kgm_notification.caf</string>
+	<key>UILaunchScreen</key>
+	<false/>
 </dict>
 </plist>

@@ -21,6 +21,7 @@ final class NotificationsViewModel: ObservableObject {
 
     private let pageSize = 30
     private var currentPage = 1
+    private var deletingIDs = Set<String>()
 
     var unreadCount: Int { notifications.filter { !$0.isRead }.count }
 
@@ -100,6 +101,9 @@ final class NotificationsViewModel: ObservableObject {
     }
 
     func delete(_ item: NotificationItem) async {
+        guard deletingIDs.insert(item.id).inserted else { return }
+        defer { deletingIDs.remove(item.id) }
+
         let previous = notifications
         notifications.removeAll { $0.id == item.id }
         do {
@@ -123,6 +127,7 @@ struct NotificationsView: View {
     @StateObject private var vm = NotificationsViewModel()
     @EnvironmentObject private var appState: AppState
     @State private var selectedNotification: NotificationItem?
+    @State private var deleteTask: Task<Void, Never>?
 
     var body: some View {
         VStack(spacing: 0) {
@@ -158,7 +163,10 @@ struct NotificationsView: View {
                             .buttonStyle(.plain)
                             .onAppear { Task { await vm.loadMoreIfNeeded(current: item) } }
                             .swipeActions(edge: .trailing, allowsFullSwipe: true) {
-                                Button(role: .destructive) { Task { await delete(item) } } label: {
+                                Button(role: .destructive) {
+                                    deleteTask?.cancel()
+                                    deleteTask = Task { await delete(item) }
+                                } label: {
                                     Label("Sil", systemImage: "trash")
                                 }
                             }
@@ -222,6 +230,10 @@ struct NotificationsView: View {
             guard selectedNotification == nil, let initialNotificationID else { return }
             selectedNotification = notifications.first(where: { $0.id == initialNotificationID })
         }
+        .onDisappear {
+            deleteTask?.cancel()
+            deleteTask = nil
+        }
     }
 
     private func load() async {
@@ -235,6 +247,9 @@ struct NotificationsView: View {
     }
 
     private func delete(_ item: NotificationItem) async {
+        if selectedNotification?.id == item.id {
+            selectedNotification = nil
+        }
         await vm.delete(item)
         await appState.refreshUnreadNotificationCount()
     }

@@ -45,19 +45,12 @@ struct BannerItem: Identifiable, Codable, Hashable {
         }
         title = (try? container.decode(String.self, forKey: .title)) ?? ""
         subtitle = (try? container.decodeIfPresent(String.self, forKey: .subtitle)) ?? ""
-        imageURL = (try? container.decodeIfPresent(String.self, forKey: .mobileImageURL))
-            ?? (try? container.decodeIfPresent(String.self, forKey: .imageURL))
-            ?? (try? container.decodeIfPresent(String.self, forKey: .bannerImageURL))
-            ?? (try? container.decodeIfPresent(String.self, forKey: .desktopImageURL))
-            ?? (try? container.decodeIfPresent(String.self, forKey: .coverImageURL))
-            ?? (try? container.decodeIfPresent(String.self, forKey: .image))
-            ?? (try? container.decodeIfPresent(String.self, forKey: .picture))
-            ?? ""
+        imageURL = Self.firstString(
+            in: container,
+            keys: [.mobileImageURL, .imageURL, .bannerImageURL, .desktopImageURL, .coverImageURL, .image, .picture]
+        ) ?? ""
         backgroundColor = (try? container.decodeIfPresent(String.self, forKey: .backgroundColor)) ?? "#FF7A00"
-        actionURL = (try? container.decodeIfPresent(String.self, forKey: .actionURL))
-            ?? (try? container.decodeIfPresent(String.self, forKey: .linkURL))
-            ?? (try? container.decodeIfPresent(String.self, forKey: .deepLink))
-            ?? (try? container.decodeIfPresent(String.self, forKey: .url))
+        actionURL = Self.firstString(in: container, keys: [.actionURL, .linkURL, .deepLink, .url])
     }
 
     func encode(to encoder: Encoder) throws {
@@ -68,6 +61,23 @@ struct BannerItem: Identifiable, Codable, Hashable {
         try container.encode(imageURL, forKey: .imageURL)
         try container.encode(backgroundColor, forKey: .backgroundColor)
         try container.encodeIfPresent(actionURL, forKey: .actionURL)
+    }
+
+    private static func firstString(
+        in container: KeyedDecodingContainer<CodingKeys>,
+        keys: [CodingKeys]
+    ) -> String? {
+        for key in keys {
+            let value = try? container.decodeIfPresent(String.self, forKey: key)
+            if let value {
+                let trimmed = value.trimmingCharacters(in: .whitespacesAndNewlines)
+                if !trimmed.isEmpty {
+                    return trimmed
+                }
+            }
+        }
+
+        return nil
     }
 }
 
@@ -80,68 +90,97 @@ struct KGMBannerCard: View {
 
     var body: some View {
         ZStack(alignment: .leading) {
-            RoundedRectangle(cornerRadius: KGMRadius.md)
-                .fill(Color(hex: banner.backgroundColor) ?? Color.kgmCampaign)
-
-            KGMCachedImage(url: banner.resolvedImageURL) {
-                LinearGradient(
-                    colors: [Color.kgmPrimary.opacity(0.22), Color.kgmPrimary.opacity(0.08)],
-                    startPoint: .topLeading,
-                    endPoint: .bottomTrailing
-                )
-                .overlay(
-                    Image(systemName: "photo.on.rectangle.angled")
-                        .font(.system(size: 28, weight: .semibold))
-                        .foregroundColor(.white.opacity(0.72))
-                )
-            }
-            .scaledToFill()
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .clipped()
-            .overlay(
-                LinearGradient(
-                    colors: [Color.black.opacity(0.46), Color.black.opacity(0.12), Color.black.opacity(0.0)],
-                    startPoint: .leading,
-                    endPoint: .trailing
-                )
-            )
-
-            HStack {
-                VStack(alignment: .leading, spacing: KGMSpacing.xs) {
-                    if !banner.subtitle.isEmpty {
-                        Text(banner.subtitle)
-                            .font(.kgmCaptionMedium)
-                            .foregroundColor(.white)
-                            .lineLimit(1)
-                            .padding(.horizontal, KGMSpacing.sm)
-                            .frame(height: 28)
-                            .background(Color.kgmPrimary.opacity(0.78))
-                            .clipShape(Capsule())
-                    }
-                    Text(banner.title.isEmpty ? "Karacabey Gross Market" : banner.title)
-                        .font(.system(size: 24, weight: .black))
-                        .foregroundColor(.white)
-                        .lineLimit(2)
-                        .minimumScaleFactor(0.78)
-
-                    Text("Alışverişe Başla")
-                        .font(.kgmCaptionMedium)
-                        .foregroundColor(.kgmPrimary)
-                        .lineLimit(1)
-                        .minimumScaleFactor(0.86)
-                        .padding(.horizontal, KGMSpacing.base)
-                        .frame(height: 38)
-                        .background(Color.white)
-                        .clipShape(RoundedRectangle(cornerRadius: KGMRadius.sm))
-                }
-                .padding(KGMSpacing.base)
-                Spacer()
-            }
+            backgroundLayer
+            imageLayer
+            contentLayer
         }
         .clipShape(RoundedRectangle(cornerRadius: KGMRadius.md))
         .overlay(RoundedRectangle(cornerRadius: KGMRadius.md).stroke(Color.kgmBorder.opacity(0.30), lineWidth: 1))
         .clipped()
         .accessibilityElement(children: .combine)
+    }
+
+    private var backgroundLayer: some View {
+        RoundedRectangle(cornerRadius: KGMRadius.md)
+            .fill(Color(hex: banner.backgroundColor) ?? Color.kgmCampaign)
+    }
+
+    private var imageLayer: some View {
+        KGMCachedImage(url: banner.resolvedImageURL) {
+            bannerPlaceholder
+        }
+        .scaledToFill()
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .clipped()
+        .overlay(bannerScrim)
+    }
+
+    private var bannerPlaceholder: some View {
+        LinearGradient(
+            colors: [Color.kgmPrimary.opacity(0.22), Color.kgmPrimary.opacity(0.08)],
+            startPoint: .topLeading,
+            endPoint: .bottomTrailing
+        )
+        .overlay(
+            Image(systemName: "photo.on.rectangle.angled")
+                .font(.system(size: 28, weight: .semibold))
+                .foregroundColor(.white.opacity(0.72))
+        )
+    }
+
+    private var bannerScrim: some View {
+        LinearGradient(
+            colors: [Color.black.opacity(0.46), Color.black.opacity(0.12), Color.black.opacity(0.0)],
+            startPoint: .leading,
+            endPoint: .trailing
+        )
+    }
+
+    private var contentLayer: some View {
+        HStack {
+            VStack(alignment: .leading, spacing: KGMSpacing.xs) {
+                subtitleBadge
+                bannerTitle
+                callToActionLabel
+            }
+            .padding(KGMSpacing.base)
+
+            Spacer()
+        }
+    }
+
+    @ViewBuilder
+    private var subtitleBadge: some View {
+        if !banner.subtitle.isEmpty {
+            Text(banner.subtitle)
+                .font(.kgmCaptionMedium)
+                .foregroundColor(.white)
+                .lineLimit(1)
+                .padding(.horizontal, KGMSpacing.sm)
+                .frame(height: 28)
+                .background(Color.kgmPrimary.opacity(0.78))
+                .clipShape(Capsule())
+        }
+    }
+
+    private var bannerTitle: some View {
+        Text(banner.title.isEmpty ? "Karacabey Gross Market" : banner.title)
+            .font(.system(size: 24, weight: .black))
+            .foregroundColor(.white)
+            .lineLimit(2)
+            .minimumScaleFactor(0.78)
+    }
+
+    private var callToActionLabel: some View {
+        Text("Alışverişe Başla")
+            .font(.kgmCaptionMedium)
+            .foregroundColor(.kgmPrimary)
+            .lineLimit(1)
+            .minimumScaleFactor(0.86)
+            .padding(.horizontal, KGMSpacing.base)
+            .frame(height: 38)
+            .background(Color.white)
+            .clipShape(RoundedRectangle(cornerRadius: KGMRadius.sm))
     }
 }
 

@@ -7,6 +7,7 @@ private let appGroup = "group.com.karacabeygrossmarket.app"
 private let kgmOrange = Color(red: 1.0, green: 0.42, blue: 0.0)
 private let kgmOrange2 = Color(red: 1.0, green: 0.23, blue: 0.0)
 private let kgmDark = Color(red: 0.10, green: 0.09, blue: 0.09)
+private let kgmNight = Color(red: 0.04, green: 0.05, blue: 0.08)
 private let kgmCream = Color(red: 1.0, green: 0.95, blue: 0.88)
 
 private func normalizedStatus(_ status: String) -> String {
@@ -160,6 +161,43 @@ private struct KGMBrandBadge: View {
     }
 }
 
+private struct KGMAccessoryIcon: View {
+    let systemName: String
+
+    var body: some View {
+        ZStack {
+            AccessoryWidgetBackground()
+            Image(systemName: systemName)
+                .font(.title3.bold())
+                .foregroundStyle(kgmOrange)
+                .widgetAccentable()
+        }
+    }
+}
+
+private struct KGMLockScreenLabel: View {
+    let title: String
+    let systemImage: String
+    let subtitle: String
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 3) {
+            Label(title, systemImage: systemImage)
+                .font(.caption.bold())
+                .foregroundStyle(.primary)
+                .widgetAccentable()
+            Text(verbatim: subtitle)
+                .font(.caption2.weight(.semibold))
+                .foregroundStyle(.secondary)
+                .lineLimit(2)
+                .minimumScaleFactor(0.78)
+        }
+        .containerBackground(for: .widget) {
+            kgmNight
+        }
+    }
+}
+
 private struct CampaignWidgetView: View {
     let entry: SnapshotEntry
     @Environment(\.widgetFamily) private var family
@@ -270,23 +308,16 @@ private struct CampaignWidgetView: View {
     }
 
     private var accessoryCircular: some View {
-        ZStack {
-            AccessoryWidgetBackground()
-            Image(systemName: "cart.fill")
-                .font(.title3.bold())
-                .foregroundStyle(kgmOrange)
-        }
+        KGMAccessoryIcon(systemName: "cart.fill")
         .widgetURL(URL(string: entry.campaign?.deepLink ?? "kgm://campaigns"))
     }
 
     private var accessoryRectangular: some View {
-        VStack(alignment: .leading, spacing: 2) {
-            Label("KGM Fırsat", systemImage: "cart.fill")
-                .font(.caption.bold())
-            Text(verbatim: entry.campaign?.title ?? "Kampanyalar hazır")
-                .font(.caption2.weight(.semibold))
-                .lineLimit(2)
-        }
+        KGMLockScreenLabel(
+            title: "KGM Fırsat",
+            systemImage: "cart.fill",
+            subtitle: entry.campaign?.title ?? "Kampanyalar hazır"
+        )
         .widgetURL(URL(string: entry.campaign?.deepLink ?? "kgm://campaigns"))
     }
 }
@@ -308,19 +339,13 @@ private struct OrderWidgetView: View {
         case .accessoryInline:
             Text(verbatim: "KGM Sipariş · \(inlineStatusText)")
         case .accessoryCircular:
-            ZStack {
-                AccessoryWidgetBackground()
-                Image(systemName: "bag.fill")
-                    .font(.title3.bold())
-                    .foregroundStyle(kgmOrange)
-            }
+            KGMAccessoryIcon(systemName: "bag.fill")
         case .accessoryRectangular:
-            VStack(alignment: .leading, spacing: 3) {
-                Label("Sipariş", systemImage: "bag.fill").font(.caption.bold())
-                Text(verbatim: rectangularStatusText)
-                    .font(.caption2.weight(.semibold))
-                    .lineLimit(2)
-            }
+            KGMLockScreenLabel(
+                title: "Sipariş",
+                systemImage: "bag.fill",
+                subtitle: rectangularStatusText
+            )
         default:
             homeOrder
         }
@@ -466,21 +491,14 @@ private struct KGMSearchWidgetView: View {
             Text("KGM · Ürün ara")
                 .widgetURL(URL(string: "kgm://search"))
         case .accessoryCircular:
-            ZStack {
-                AccessoryWidgetBackground()
-                Image(systemName: "magnifyingglass")
-                    .font(.title3.bold())
-                    .foregroundStyle(kgmOrange)
-            }
+            KGMAccessoryIcon(systemName: "magnifyingglass")
             .widgetURL(URL(string: "kgm://search"))
         case .accessoryRectangular:
-            VStack(alignment: .leading, spacing: 3) {
-                Label("Ürün Ara", systemImage: "magnifyingglass")
-                    .font(.caption.bold())
-                Text("Barkod, marka veya ürün adıyla hızlı arama")
-                    .font(.caption2.weight(.semibold))
-                    .lineLimit(2)
-            }
+            KGMLockScreenLabel(
+                title: "Ürün Ara",
+                systemImage: "magnifyingglass",
+                subtitle: "Barkod, marka veya ürün adıyla hızlı arama"
+            )
             .widgetURL(URL(string: "kgm://search"))
         default:
             ZStack(alignment: .leading) {
@@ -534,21 +552,14 @@ private struct KGMCartWidgetView: View {
             Text("KGM Sepet · Devam et")
                 .widgetURL(URL(string: "kgm://cart"))
         case .accessoryCircular:
-            ZStack {
-                AccessoryWidgetBackground()
-                Image(systemName: "cart.fill")
-                    .font(.title3.bold())
-                    .foregroundStyle(kgmOrange)
-            }
+            KGMAccessoryIcon(systemName: "cart.fill")
             .widgetURL(URL(string: "kgm://cart"))
         case .accessoryRectangular:
-            VStack(alignment: .leading, spacing: 3) {
-                Label("Sepet", systemImage: "cart.fill")
-                    .font(.caption.bold())
-                Text("Alışverişe kaldığın yerden devam et")
-                    .font(.caption2.weight(.semibold))
-                    .lineLimit(2)
-            }
+            KGMLockScreenLabel(
+                title: "Sepet",
+                systemImage: "cart.fill",
+                subtitle: "Alışverişe kaldığın yerden devam et"
+            )
             .widgetURL(URL(string: "kgm://cart"))
         default:
             ZStack(alignment: .leading) {
@@ -596,21 +607,14 @@ private struct KGMStoreWidgetView: View {
             Text("KGM · Hızlı teslimat")
                 .widgetURL(URL(string: "kgm://store"))
         case .accessoryCircular:
-            ZStack {
-                AccessoryWidgetBackground()
-                Image(systemName: "mappin.and.ellipse")
-                    .font(.title3.bold())
-                    .foregroundStyle(kgmOrange)
-            }
+            KGMAccessoryIcon(systemName: "mappin.and.ellipse")
             .widgetURL(URL(string: "kgm://store"))
         case .accessoryRectangular:
-            VStack(alignment: .leading, spacing: 3) {
-                Label("Karacabey", systemImage: "mappin.and.ellipse")
-                    .font(.caption.bold())
-                Text("Market, teslimat ve mağaza bilgileri")
-                    .font(.caption2.weight(.semibold))
-                    .lineLimit(2)
-            }
+            KGMLockScreenLabel(
+                title: "Karacabey",
+                systemImage: "mappin.and.ellipse",
+                subtitle: "Market, teslimat ve mağaza bilgileri"
+            )
             .widgetURL(URL(string: "kgm://store"))
         default:
             ZStack(alignment: .leading) {
@@ -740,24 +744,30 @@ struct OrderActivityAttributes: ActivityAttributes {
 private struct KGMOrderLiveActivity: Widget {
     var body: some WidgetConfiguration {
         ActivityConfiguration(for: OrderActivityAttributes.self) { context in
-            HStack(spacing: 14) {
-                Image(systemName: "bag.fill")
-                    .foregroundStyle(.white)
-                    .frame(width: 44, height: 44)
-                    .background(kgmOrange)
-                    .clipShape(RoundedRectangle(cornerRadius: 13))
-                VStack(alignment: .leading, spacing: 5) {
-                    Text("Sipariş #\(context.attributes.orderNumber)")
-                        .font(.headline)
-                    Text(context.state.statusLabel)
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
-                    ProgressView(value: context.state.progress).tint(kgmOrange)
+            ZStack {
+                LinearGradient(colors: [kgmNight, kgmDark], startPoint: .topLeading, endPoint: .bottomTrailing)
+                HStack(spacing: 14) {
+                    Image(systemName: "bag.fill")
+                        .foregroundStyle(.white)
+                        .frame(width: 44, height: 44)
+                        .background(kgmOrange)
+                        .clipShape(RoundedRectangle(cornerRadius: 13))
+                    VStack(alignment: .leading, spacing: 5) {
+                        Text("Sipariş #\(context.attributes.orderNumber)")
+                            .font(.headline.weight(.heavy))
+                            .foregroundStyle(.white)
+                            .lineLimit(1)
+                        Text(context.state.statusLabel)
+                            .font(.caption.weight(.semibold))
+                            .foregroundStyle(.white.opacity(0.82))
+                        ProgressView(value: context.state.progress).tint(kgmOrange)
+                    }
+                    Spacer(minLength: 0)
                 }
+                .padding()
             }
-            .padding()
-            .activityBackgroundTint(.white)
-            .activitySystemActionForegroundColor(kgmOrange)
+            .activityBackgroundTint(kgmNight)
+            .activitySystemActionForegroundColor(.white)
             .widgetURL(URL(string: context.attributes.deepLink))
         } dynamicIsland: { context in
             DynamicIsland {
