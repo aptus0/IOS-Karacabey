@@ -1,4 +1,5 @@
 import Foundation
+import Security
 import CryptoKit
 
 /// Production TLS sertifika pinning desteği.
@@ -66,9 +67,9 @@ final class PinnedCertificatesURLSessionDelegate: NSObject, URLSessionDelegate {
 
     private func certificateSHA256Pins(from trust: SecTrust) -> Set<String> {
         var pins = Set<String>()
-        let count = SecTrustGetCertificateCount(trust)
-        for index in 0..<count {
-            guard let certificate = SecTrustGetCertificateAtIndex(trust, index) else { continue }
+        let certificates = (SecTrustCopyCertificateChain(trust) as? [SecCertificate]) ?? []
+
+        for certificate in certificates {
             let data = SecCertificateCopyData(certificate) as Data
             let digest = SHA256.hash(data: data)
             pins.insert(Data(digest).base64EncodedString())

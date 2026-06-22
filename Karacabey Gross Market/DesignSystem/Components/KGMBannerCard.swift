@@ -27,6 +27,23 @@ struct BannerItem: Identifiable, Codable, Hashable {
         case url
     }
 
+    private static let imageCandidateKeys: [CodingKeys] = [
+        .mobileImageURL,
+        .imageURL,
+        .bannerImageURL,
+        .desktopImageURL,
+        .coverImageURL,
+        .image,
+        .picture,
+    ]
+
+    private static let actionCandidateKeys: [CodingKeys] = [
+        .actionURL,
+        .linkURL,
+        .deepLink,
+        .url,
+    ]
+
     init(id: String, title: String, subtitle: String, imageURL: String, backgroundColor: String, actionURL: String?) {
         self.id = id
         self.title = title
@@ -45,12 +62,9 @@ struct BannerItem: Identifiable, Codable, Hashable {
         }
         title = (try? container.decode(String.self, forKey: .title)) ?? ""
         subtitle = (try? container.decodeIfPresent(String.self, forKey: .subtitle)) ?? ""
-        imageURL = Self.firstString(
-            in: container,
-            keys: [.mobileImageURL, .imageURL, .bannerImageURL, .desktopImageURL, .coverImageURL, .image, .picture]
-        ) ?? ""
+        imageURL = Self.firstString(in: container, keys: Self.imageCandidateKeys) ?? ""
         backgroundColor = (try? container.decodeIfPresent(String.self, forKey: .backgroundColor)) ?? "#FF7A00"
-        actionURL = Self.firstString(in: container, keys: [.actionURL, .linkURL, .deepLink, .url])
+        actionURL = Self.firstString(in: container, keys: Self.actionCandidateKeys)
     }
 
     func encode(to encoder: Encoder) throws {
@@ -192,40 +206,22 @@ struct KGMBannerSlider: View {
     private let minimumCardHeight: CGFloat = 184
     private let dotHeight: CGFloat = 8
 
+    private struct SliderMetrics {
+        let cardWidth: CGFloat
+        let cardHeight: CGFloat
+        let totalHeight: CGFloat
+
+        init(containerWidth: CGFloat, minimumCardHeight: CGFloat, maximumCardHeight: CGFloat, dotHeight: CGFloat) {
+            let safeWidth = max(0, containerWidth - (KGMSpacing.base * 2))
+            cardWidth = safeWidth
+            cardHeight = min(max(safeWidth * 0.56, minimumCardHeight), maximumCardHeight)
+            totalHeight = cardHeight + KGMSpacing.sm + dotHeight
+        }
+    }
+
     var body: some View {
         GeometryReader { proxy in
-            let cardWidth = max(0, proxy.size.width - (KGMSpacing.base * 2))
-            let cardHeight = min(max(cardWidth * 0.56, minimumCardHeight), maximumCardHeight)
-
-            VStack(spacing: KGMSpacing.sm) {
-                TabView(selection: $currentIndex) {
-                    ForEach(Array(banners.enumerated()), id: \.offset) { index, banner in
-                        Button {
-                            onBannerTap(banner)
-                        } label: {
-                            KGMBannerCard(banner: banner)
-                                .frame(width: cardWidth, height: cardHeight)
-                        }
-                        .buttonStyle(.plain)
-                        .frame(maxWidth: .infinity, maxHeight: cardHeight)
-                        .tag(index)
-                        .accessibilityLabel(banner.title.isEmpty ? "Karacabey Gross Market kampanyası" : banner.title)
-                    }
-                }
-                .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-                .frame(height: cardHeight)
-                .clipped()
-
-                HStack(spacing: KGMSpacing.xs) {
-                    ForEach(0..<banners.count, id: \.self) { i in
-                        Capsule()
-                            .fill(i == currentIndex ? Color.kgmPrimary : Color(.systemGray4))
-                            .frame(width: i == currentIndex ? 16 : 6, height: dotHeight)
-                            .animation(.easeInOut(duration: 0.2), value: currentIndex)
-                    }
-                }
-            }
-            .frame(width: proxy.size.width, height: cardHeight + KGMSpacing.sm + dotHeight, alignment: .top)
+            sliderContent(for: proxy.size)
         }
         .frame(height: maximumCardHeight + KGMSpacing.sm + dotHeight)
         .clipped()
@@ -244,6 +240,64 @@ struct KGMBannerSlider: View {
                 currentIndex = max(0, count - 1)
             }
         }
+    }
+
+    private func sliderContent(for size: CGSize) -> some View {
+        let metrics = SliderMetrics(
+            containerWidth: size.width,
+            minimumCardHeight: minimumCardHeight,
+            maximumCardHeight: maximumCardHeight,
+            dotHeight: dotHeight
+        )
+
+        return VStack(spacing: KGMSpacing.sm) {
+            bannerPages(metrics: metrics)
+            pageDots
+        }
+        .frame(width: size.width, height: metrics.totalHeight, alignment: .top)
+    }
+
+    private func bannerPages(metrics: SliderMetrics) -> some View {
+        TabView(selection: $currentIndex) {
+            ForEach(Array(banners.enumerated()), id: \.offset) { index, banner in
+                bannerButton(for: banner, index: index, metrics: metrics)
+            }
+        }
+        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+        .frame(height: metrics.cardHeight)
+        .clipped()
+    }
+
+    private func bannerButton(for banner: BannerItem, index: Int, metrics: SliderMetrics) -> some View {
+        Button {
+            onBannerTap(banner)
+        } label: {
+            KGMBannerCard(banner: banner)
+                .frame(width: metrics.cardWidth, height: metrics.cardHeight)
+        }
+        .buttonStyle(.plain)
+        .frame(maxWidth: .infinity, maxHeight: metrics.cardHeight)
+        .tag(index)
+        .accessibilityLabel(accessibilityLabel(for: banner))
+    }
+
+    private var pageDots: some View {
+        HStack(spacing: KGMSpacing.xs) {
+            ForEach(0..<banners.count, id: \.self) { index in
+                pageDot(at: index)
+            }
+        }
+    }
+
+    private func pageDot(at index: Int) -> some View {
+        Capsule()
+            .fill(index == currentIndex ? Color.kgmPrimary : Color(.systemGray4))
+            .frame(width: index == currentIndex ? 16 : 6, height: dotHeight)
+            .animation(.easeInOut(duration: 0.2), value: currentIndex)
+    }
+
+    private func accessibilityLabel(for banner: BannerItem) -> String {
+        banner.title.isEmpty ? "Karacabey Gross Market kampanyası" : banner.title
     }
 }
 

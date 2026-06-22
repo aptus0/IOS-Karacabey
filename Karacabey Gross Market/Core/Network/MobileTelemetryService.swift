@@ -100,7 +100,7 @@ final class MobileTelemetryService {
         isFlushing = true
         defer { isFlushing = false }
 
-        var queue = loadPendingEvents()
+        let queue = loadPendingEvents()
         guard !queue.isEmpty else { return }
 
         var remaining: [MobileEventRequest] = []
