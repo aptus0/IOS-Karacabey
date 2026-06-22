@@ -800,6 +800,7 @@
 				DEVELOPMENT_TEAM = 35B7ZX5TY6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = KGMWidgets/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Karacabey Gross Market";
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.erkur.karacabeygrossmarket.dev123.widgets;
@@ -820,6 +821,7 @@
 				DEVELOPMENT_TEAM = 35B7ZX5TY6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = KGMWidgets/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Karacabey Gross Market";
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.erkur.karacabeygrossmarket.widgets;
@@ -839,6 +841,7 @@
 				DEVELOPMENT_TEAM = 35B7ZX5TY6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = KGMNotificationService/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Karacabey Gross Market";
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.erkur.karacabeygrossmarket.dev123.notification-service";
@@ -858,6 +861,7 @@
 				DEVELOPMENT_TEAM = 35B7ZX5TY6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = KGMNotificationService/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Karacabey Gross Market";
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.erkur.karacabeygrossmarket.notification-service";
